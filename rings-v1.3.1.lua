@@ -376,7 +376,7 @@ function conky_ring_stats()
 
 	if update_num>5 then
 	    for i in pairs(settings_table) do
-            display_temp=temp_watch()
+            --display_temp=temp_watch()
             setup_rings(cr,settings_table[i])
 	    end
 	end
@@ -443,7 +443,7 @@ end
 -- Contrôle de l'interface active
 function iface_watch()
 
-    iface=conky_parse("${if_existing /proc/net/route enp34s0}enp34s0${else}wlan0${endif}")
+    iface=conky_parse("${if_existing /proc/net/route enp34s0}")
 
     settings_table[11]['arg']=iface
     settings_table[12]['arg']=iface
