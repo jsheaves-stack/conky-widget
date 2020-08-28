@@ -443,10 +443,10 @@ end
 -- Contrôle de l'interface active
 function iface_watch()
 
-    iface=conky_parse("${if_existing /proc/net/route enp34s0}")
+    iface=conky_parse("${if_existing /proc/net/route enp34s0}enp34s0${endif}")
 
-    settings_table[11]['arg']=iface
-    settings_table[12]['arg']=iface
+    settings_table[17]['arg']=iface
+    settings_table[18]['arg']=iface
 end
 
 function conky_draw_bg()
